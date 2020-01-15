@@ -4,7 +4,8 @@
  * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
-fun seconds(hours: Int, minutes: Int, seconds: Int): Int = (60*60*hours + 60*minutes + seconds)
+fun seconds(hours: Int, minutes: Int, seconds: Int): Int = (60 * 60 * hours + 60 * minutes + seconds)
+
 /**
  * Тривиальная
  *
@@ -12,7 +13,7 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = (60*60*hours + 60*min
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = (((sagenes * 48) + (arshins * 16)
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = (((48 * sagenes) + (16 * arshins)
         + vershoks) * 4.445) / 100
 
 
