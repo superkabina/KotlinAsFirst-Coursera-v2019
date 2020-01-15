@@ -4,6 +4,7 @@ package lesson2.task1
 
 import lesson1.task1.discriminant
 import kotlin.math.max
+import kotlin.math.min
 import kotlin.math.sqrt
 
 /**
@@ -47,8 +48,8 @@ fun minBiRoot(a: Double, b: Double, c: Double): Double {
         return -sqrt(bc)
         // Дальше функция при a == 0.0 не идёт
     }
-    val d = discriminant(a, b, c)   // 2
-    if (d < 0.0) return Double.NaN  // 3
+    val d = //discriminant(a, b, c)   // 2
+        if (d < 0.0) return Double.NaN  // 3
     // 4
     val y1 = (-b + sqrt(d)) / (2 * a)
     val y2 = (-b - sqrt(d)) / (2 * a)
@@ -127,4 +128,9 @@ fun triangleKind(a: Double, b: Double, c: Double): Int = TODO()
  * Найти длину пересечения отрезков AB и CD.
  * Если пересечения нет, вернуть -1.
  */
-fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int = TODO()
+fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int {
+    val otr = min(d, b) - max(a, c)
+    return if (otr < 0) {
+        -1
+    } else otr
+}
