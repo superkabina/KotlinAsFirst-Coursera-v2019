@@ -24,4 +24,3 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = (((sagen
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
 fun thirdDigit(number: Int): Int = ((number / 100) % 10)
-
