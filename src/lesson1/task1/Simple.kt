@@ -6,6 +6,7 @@
  */
 fun seconds(hours: Int, minutes: Int, seconds: Int): Int = (60 * 60 * hours + 60 * minutes + seconds)
 
+
 /**
  * Тривиальная
  *
@@ -24,3 +25,4 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = (((48 * 
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
 fun thirdDigit(number: Int): Int = ((number / 100) % 10)
+
