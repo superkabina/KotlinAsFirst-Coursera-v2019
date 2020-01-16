@@ -42,20 +42,6 @@ fun timeSecondsToStr(seconds: Int): String {
 /**
  * Пример: консольный ввод
  */
-fun main() {
-    println("Введите время в формате ЧЧ:ММ:СС")
-    val line = readLine()
-    if (line != null) {
-        val seconds = timeStrToSeconds(line)
-        if (seconds == -1) {
-            println("Введённая строка $line не соответствует формату ЧЧ:ММ:СС")
-        } else {
-            println("Прошло секунд с начала суток: $seconds")
-        }
-    } else {
-        println("Достигнут <конец файла> в процессе чтения строки. Программа прервана")
-    }
-}
 
 
 /**
@@ -69,7 +55,76 @@ fun main() {
  * Обратите внимание: некорректная с точки зрения календаря дата (например, 30.02.2009) считается неверными
  * входными данными.
  */
-fun dateStrToDigit(str: String): String = TODO()
+fun dateStrToDigit(str: String): String {
+    val none: String = "   "
+    val parts = str.split(" ")
+    val day = parts[0].toInt()
+    var mounth = ""
+    val year = parts[2].toInt()
+    if (day < 1 || day > 32)
+        return none
+    if (year < 1)
+        return none
+    if (parts[1] == "января") {
+        mounth = "01"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "февраля") {
+        mounth = "02"
+        if (day > 29)
+            return none
+    } else if (parts[1] == "марта") {
+        mounth = "03"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "апреля") {
+        mounth = "04"
+        if (day > 30)
+            return none
+    } else if (parts[1] == "мая") {
+        mounth = "05"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "июня") {
+        mounth = "06"
+        if (day > 30)
+            return none
+    } else if (parts[1] == "июля") {
+        mounth = "07"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "августа") {
+        mounth = "08"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "сентября") {
+        mounth = "09"
+        if (day > 30)
+            return none
+    } else if (parts[1] == "октября") {
+        mounth = "10"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "ноября") {
+        mounth = "11"
+        if (day > 30)
+            return none
+    } else if (parts[1] == "декабря") {
+        mounth = "12"
+        if (day > 31)
+            return none
+    } else return none
+
+
+
+    val result: String = "$day.$mounth.$year"
+    println("$result")
+    return result
+}
+
+
+
+
 
 /**
  * Средняя
@@ -81,7 +136,74 @@ fun dateStrToDigit(str: String): String = TODO()
  * Обратите внимание: некорректная с точки зрения календаря дата (например, 30 февраля 2009) считается неверными
  * входными данными.
  */
-fun dateDigitToStr(digital: String): String = TODO()
+fun dateDigitToStr(digital: String): String {
+    val none: String = "   "
+    val parts = digital.split(".")
+    val day = parts[0].toInt()
+    var mounth = ""
+    val year = parts[2].toInt()
+    if (day < 1 || day > 32)
+        return none
+    if (year < 1)
+        return none
+    if (parts[1] == "01") {
+        mounth = "января"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "02") {
+        mounth = "февраля"
+        if (day > 29)
+            return none
+    } else if (parts[1] == "03") {
+        mounth = "марта"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "04") {
+        mounth = "апреля"
+        if (day > 30)
+            return none
+    } else if (parts[1] == "05") {
+        mounth = "мая"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "06") {
+        mounth = "июня"
+        if (day > 30)
+            return none
+    } else if (parts[1] == "07") {
+        mounth = "июля"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "08") {
+        mounth = "августа"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "09") {
+        mounth = "сентября"
+        if (day > 30)
+            return none
+    } else if (parts[1] == "10") {
+        mounth = "октября"
+        if (day > 31)
+            return none
+    } else if (parts[1] == "11") {
+        mounth = "ноября"
+        if (day > 30)
+            return none
+    } else if (parts[1] == "12") {
+        mounth = "декабря"
+        if (day > 31)
+            return none
+    } else return none
+
+
+
+    val result: String = "$day $mounth $year"
+    println("$result")
+    return result
+}
+
+
 
 /**
  * Средняя
