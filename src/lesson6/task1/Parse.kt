@@ -122,10 +122,6 @@ fun dateStrToDigit(str: String): String {
     return result
 }
 
-
-
-
-
 /**
  * Средняя
  *
