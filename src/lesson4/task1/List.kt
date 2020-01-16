@@ -181,8 +181,34 @@ fun factorize(n: Int): List<Int> = TODO()
  * Результат разложения вернуть в виде строки, например 75 -> 3*5*5
  * Множители в результирующей строке должны располагаться по возрастанию.
  */
-fun factorizeToString(n: Int): String = TODO()
+fun factorizeToString(n: Int): String {
 
+
+    var sqrt = sqrt(n.toDouble())
+    var del = 2
+    var result = ""
+    var dann = n
+    while (dann > 1 && del <= sqrt) {
+        if (dann % del == 0) {
+            result = "$result$del*"
+            dann = dann / del
+        } else if (del == 2) {
+            del++;
+        } else {
+            del = del + 2
+        }
+    }
+    if (dann != 1) {
+        result = "$result$dann"
+    }
+    return result
+
+
+}
+fun main(){
+    var n3 = factorizeToString(75)
+    println("$n3")
+}
 /**
  * Средняя
  *
